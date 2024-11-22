@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 10px 0;
+    color:rgb(49, 135, 25); /* Dark pink color */
+    font-size: 55px; /* Increased text size */
+}
+
+.header h2 {
+    margin: 10px 0;
+    color: #b36293; /* Keeping this as white */
+    font-size: 25px; /* Default text size for the subtitle */
+}
+
+.score-panel {
+    margin-top: 20px;
+}
+
+.star-rating {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.star-rating .star {
+    margin: 0 5px;
+    color: #ccaf0c; /* Gold color for stars */
+}
+
+.moves-counter, .timer-container {
+    display: block;
+    margin: 10px 0;
+}
+
+.reset {
+    margin-top: 10px;
+}
+
+.deck-container {
+    background-color: #eb8cde; /* Dark gray background */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.deck {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    width: fit-content;
+}
+
+.card {
+    background: rgb(109, 109, 64);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+    font-size: 48px; /* Adjust this value to make the emojis larger */
+    position: relative;
+    transform: rotateY(0deg); /* Initially show the back side */
+}
+
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(197, 193, 168);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card.flip .back {
+    display: none; /* Hide the back side on flip */
+}
+
+.card.flip span {
+    display: block; /* Show the emoji on flip */
+}
+
+.card span {
+    display: none; /* Hide the emoji initially */
+}
+
+.card.match {
+    background-color: rgb(234, 186, 166);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
